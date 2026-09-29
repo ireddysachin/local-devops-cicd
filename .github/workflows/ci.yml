@@ -20,6 +20,16 @@ jobs:
         run: |
           pip install -r app/requirements.txt
 
+      - name: Terraform Init
+        run: |
+          cd terraform
+          terraform init
+
+      - name: Terraform Validate
+        run: |
+          cd terraform
+          terraform validate
+
       - name: Check Python syntax
         run: |
           python -m py_compile app/app.py
