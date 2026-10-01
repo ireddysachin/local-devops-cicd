@@ -9,7 +9,7 @@ def home():
     <h1>🚀 Local DevOps CI/CD Platform</h1>
     <p>Application: Running</p>
     <p>Environment: Floci</p>
-    <p>Version: 1.0</p>
+    <p>Version: 2.0</p>
     <p>Status: Healthy</p>
     """
 
@@ -19,7 +19,7 @@ def health():
     return {
         "status": "healthy",
         "application": "local-devops-cicd",
-        "version": "1.0"
+        "version": "2.0"
     }
 
 

@@ -17,5 +17,6 @@ provider "aws" {
 
   endpoints {
     s3 = "http://localhost:4566"
+    ecs ="http://localhost:4566"
   }
 }
