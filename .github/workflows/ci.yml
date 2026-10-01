@@ -55,3 +55,8 @@ jobs:
       - name: Push Docker image to Floci ECR
         run: |
          docker push localhost:5100/000000000000/us-east-1/local-devops-app:${{ github.sha }}
+
+      - name: Terraform Deploy
+        run: |
+         cd terraform
+         terraform apply -auto-approve -var="image_tag=${{ github.sha }}"

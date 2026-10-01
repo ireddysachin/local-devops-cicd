@@ -8,7 +8,7 @@ resource "aws_ecs_task_definition" "app_task" {
   container_definitions = jsonencode([
     {
       name      = "local-devops-app"
-      image     = "localhost:5100/000000000000/us-east-1/local-devops-app:1.0"
+      image     = "localhost:5100/000000000000/us-east-1/local-devops-app:${var.image_tag}"
       essential = true
 
       portMappings = [
