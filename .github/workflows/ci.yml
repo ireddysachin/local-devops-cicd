@@ -43,18 +43,9 @@ jobs:
           docker tag local-devops-cicd:${{ github.sha }} \
           localhost:5100/000000000000/us-east-1/local-devops-app:${{ github.sha }}
 
-      - name: Build Docker image
-        run: |
-          docker build -f docker/Dockerfile -t local-devops-cicd:${{ github.sha }} .
-
-      - name: Tag Docker image for Floci ECR
-        run: |
-         docker tag local-devops-cicd:${{ github.sha }} \
-         localhost:5100/000000000000/us-east-1/local-devops-app:${{ github.sha }}
-
       - name: Push Docker image to Floci ECR
         run: |
-         docker push localhost:5100/000000000000/us-east-1/local-devops-app:${{ github.sha }}
+          docker push localhost:5100/000000000000/us-east-1/local-devops-app:${{ github.sha }}
 
       - name: Terraform Deploy
         run: |
